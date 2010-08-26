@@ -1,0 +1,58 @@
+= mailroom
+
+* http://github.com/ejdraper/mailroom
+
+== DESCRIPTION:
+
+mailroom is a Ruby on Rails plugin designed solely for development, to easily output text and HTML emails from ActionMailer to files that are dropped in the public directory for viewing in a browser, to make building and testing emails sent by your application much easier and quicker.
+
+== FEATURES:
+
+Simply having this plugin present in your app will ensure that all mails that come through ActionMailer in development mode will be output to a folder in the public directory called mailroom. When a mail is saved, you'll see something like this in the development log file:
+
+Saved mail, viewable at http://myhost.local/mailroom/1234567890.html
+
+If you have not set the :host parameter on the ActionMailer default_url_options, then you will see something like this in the log instead:
+
+Saved mail, viewable at /mailroom/1234567890.html
+
+If it's a plain text mail, it'll look like this:
+
+Saved mail, viewable at /mailroom/1234567890.txt
+
+And if it's a multipart e-mail, it'll include a line for each part, with the URL for plain text and HTML versions.
+
+Additionally, every time a mail comes through mailroom, any mails in the mailroom folder older than 1 hour will be purged.
+
+== REQUIREMENTS:
+
+As this is a Ruby on Rails plugin, the only requirement is Rails itself - Rails 2.3 is required.
+
+== INSTALL:
+
+script/plugin install http://github.com/ejdraper/mailroom
+
+== LICENSE:
+
+(The MIT License)
+
+Copyright (c) 2010 Elliott Draper <el@ejdraper.com>
+
+Permission is hereby granted, free of charge, to any person obtaining
+a copy of this software and associated documentation files (the
+'Software'), to deal in the Software without restriction, including
+without limitation the rights to use, copy, modify, merge, publish,
+distribute, sublicense, and/or sell copies of the Software, and to
+permit persons to whom the Software is furnished to do so, subject to
+the following conditions:
+
+The above copyright notice and this permission notice shall be
+included in all copies or substantial portions of the Software.
+
+THE SOFTWARE IS PROVIDED 'AS IS', WITHOUT WARRANTY OF ANY KIND,
+EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF
+MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT.
+IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY
+CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT,
+TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE
+SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
